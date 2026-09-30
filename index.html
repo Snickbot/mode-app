@@ -32,9 +32,7 @@
   <section class="screen" id="screen-focus">
     <div class="top-bar">
       <button class="back-btn" data-back>&larr; Back</button>
-      <div class="progress-dots">
-        <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-      </div>
+      <div class="progress-dots"><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
     </div>
     <h3>What do you want to improve?</h3>
     <p style="color:var(--text-dim); font-size:13px; margin-bottom:14px;">Select as many as you like.</p>
@@ -57,9 +55,7 @@
   <section class="screen" id="screen-situations">
     <div class="top-bar">
       <button class="back-btn" data-back>&larr; Back</button>
-      <div class="progress-dots">
-        <div class="dot active"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
-      </div>
+      <div class="progress-dots"><div class="dot active"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div></div>
     </div>
     <h3>What situations matter most?</h3>
     <div class="card checkbox-list" id="situations-list">
@@ -79,32 +75,15 @@
   <section class="screen" id="screen-sliders">
     <div class="top-bar">
       <button class="back-btn" data-back>&larr; Back</button>
-      <div class="progress-dots">
-        <div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot"></div>
-      </div>
+      <div class="progress-dots"><div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot"></div></div>
     </div>
     <h3>What do you want to feel like?</h3>
     <div class="card">
-      <div class="slider-row">
-        <div class="slider-labels"><span>CALM</span><span>ENERGETIC</span></div>
-        <input type="range" min="0" max="100" value="50" id="slider-energy">
-      </div>
-      <div class="slider-row">
-        <div class="slider-labels"><span>QUIET</span><span>EXPRESSIVE</span></div>
-        <input type="range" min="0" max="100" value="50" id="slider-expressive">
-      </div>
-      <div class="slider-row">
-        <div class="slider-labels"><span>CASUAL</span><span>FORMAL</span></div>
-        <input type="range" min="0" max="100" value="50" id="slider-formal">
-      </div>
-      <div class="slider-row">
-        <div class="slider-labels"><span>PRIVATE</span><span>SOCIAL</span></div>
-        <input type="range" min="0" max="100" value="50" id="slider-social">
-      </div>
-      <div class="slider-row">
-        <div class="slider-labels"><span>SOFT</span><span>ASSERTIVE</span></div>
-        <input type="range" min="0" max="100" value="50" id="slider-assertive">
-      </div>
+      <div class="slider-row"><div class="slider-labels"><span>CALM</span><span>ENERGETIC</span></div><input type="range" min="0" max="100" value="50" id="slider-energy"></div>
+      <div class="slider-row"><div class="slider-labels"><span>QUIET</span><span>EXPRESSIVE</span></div><input type="range" min="0" max="100" value="50" id="slider-expressive"></div>
+      <div class="slider-row"><div class="slider-labels"><span>CASUAL</span><span>FORMAL</span></div><input type="range" min="0" max="100" value="50" id="slider-formal"></div>
+      <div class="slider-row"><div class="slider-labels"><span>PRIVATE</span><span>SOCIAL</span></div><input type="range" min="0" max="100" value="50" id="slider-social"></div>
+      <div class="slider-row"><div class="slider-labels"><span>SOFT</span><span>ASSERTIVE</span></div><input type="range" min="0" max="100" value="50" id="slider-assertive"></div>
     </div>
     <button class="btn-primary" id="btn-sliders-next">GENERATE MY MODE</button>
   </section>
@@ -112,9 +91,7 @@
   <section class="screen" id="screen-result">
     <div class="top-bar">
       <button class="back-btn" data-back>&larr; Back</button>
-      <div class="progress-dots">
-        <div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot active"></div>
-      </div>
+      <div class="progress-dots"><div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot active"></div></div>
     </div>
     <div class="card" style="text-align:center;">
       <p style="font-size:12px; color:var(--text-dim); letter-spacing:1px;">YOUR MODE</p>
@@ -133,8 +110,43 @@
       <p style="font-size:12px; color:var(--text-dim); letter-spacing:1px;">YOUR MODE</p>
       <h2 id="dashboard-mode-name">CALM CONFIDENCE</h2>
     </div>
+    <div style="display:flex; gap:10px; margin-bottom:16px;">
+      <button class="btn-secondary" id="btn-open-modeswitch" style="flex:1; margin-top:0;">Switch Mode</button>
+      <button class="btn-secondary" id="btn-open-progress" style="flex:1; margin-top:0;">Progress</button>
+      <button class="btn-secondary" id="btn-open-share" style="flex:1; margin-top:0;">Share</button>
+    </div>
     <h3>Today's Training</h3>
     <div id="training-cards"></div>
+  </section>
+
+  <section class="screen" id="screen-modeswitch">
+    <div class="top-bar">
+      <button class="back-btn" id="btn-back-modeswitch">&larr; Back</button>
+    </div>
+    <h3>Your Modes</h3>
+    <div id="modeswitch-list"></div>
+    <button class="btn-primary" id="btn-new-mode">+ CREATE NEW MODE</button>
+  </section>
+
+  <section class="screen" id="screen-progress">
+    <div class="top-bar">
+      <button class="back-btn" id="btn-back-progress">&larr; Back</button>
+    </div>
+    <h3>Track Today's Progress</h3>
+    <p style="color:var(--text-dim); font-size:12px; margin-bottom:14px;">Self-reported. Not a scientific measurement.</p>
+    <div class="card" id="progress-sliders"></div>
+    <button class="btn-primary" id="btn-save-progress">SAVE TODAY'S SCORES</button>
+    <h3 style="margin-top:24px;">History</h3>
+    <div id="progress-history"></div>
+  </section>
+
+  <section class="screen" id="screen-share">
+    <div class="top-bar">
+      <button class="back-btn" id="btn-back-share">&larr; Back</button>
+    </div>
+    <h3>My Mode Card</h3>
+    <canvas id="share-canvas" width="600" height="750" style="width:100%; max-width:340px; display:block; margin:16px auto; border-radius:16px;"></canvas>
+    <a id="download-card" download="my-mode-card.png"><button class="btn-primary">DOWNLOAD CARD</button></a>
   </section>
 
 </main>
