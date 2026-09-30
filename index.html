@@ -9,34 +9,137 @@
 <body>
 
 <main id="app">
+
   <section class="screen active" id="screen-landing">
     <div class="landing-hero">
       <h1 class="logo">MODE</h1>
       <h2 class="tagline">Choose how you show up.</h2>
       <p class="sub">Practice the way you speak, move, communicate, and present yourself.</p>
       <button class="btn-primary" id="btn-start">BUILD MY MODE</button>
+      <br>
+      <button class="btn-secondary" id="btn-existing" style="display:none;">GO TO MY DASHBOARD</button>
     </div>
-
     <div class="landing-example">
-      <div class="example-step">
-        <span class="label">BEFORE</span>
-        <p>"Talks too quickly"</p>
-      </div>
+      <div class="example-step"><span class="label">BEFORE</span><p>"Talks too quickly"</p></div>
       <div class="arrow">↓</div>
-      <div class="example-step">
-        <span class="label">PRACTICE</span>
-        <p>20-second slow-speaking exercise</p>
-      </div>
+      <div class="example-step"><span class="label">PRACTICE</span><p>20-second slow-speaking exercise</p></div>
       <div class="arrow">↓</div>
-      <div class="example-step">
-        <span class="label">AFTER</span>
-        <p>More deliberate delivery</p>
-      </div>
+      <div class="example-step"><span class="label">AFTER</span><p>More deliberate delivery</p></div>
       <p class="disclaimer">This is practice, not a guaranteed transformation.</p>
     </div>
   </section>
+
+  <section class="screen" id="screen-focus">
+    <div class="top-bar">
+      <button class="back-btn" data-back>&larr; Back</button>
+      <div class="progress-dots">
+        <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+    <h3>What do you want to improve?</h3>
+    <p style="color:var(--text-dim); font-size:13px; margin-bottom:14px;">Select as many as you like.</p>
+    <div class="card checkbox-list" id="focus-list">
+      <label><input type="checkbox" value="Walking & posture"> Walking & posture</label>
+      <label><input type="checkbox" value="Speaking"> Speaking</label>
+      <label><input type="checkbox" value="Voice"> Voice</label>
+      <label><input type="checkbox" value="Eye contact"> Eye contact</label>
+      <label><input type="checkbox" value="Body language"> Body language</label>
+      <label><input type="checkbox" value="Conversation"> Conversation</label>
+      <label><input type="checkbox" value="Confidence"> Confidence</label>
+      <label><input type="checkbox" value="Social skills"> Social skills</label>
+      <label><input type="checkbox" value="Emotional composure"> Emotional composure</label>
+      <label><input type="checkbox" value="Professional presence"> Professional presence</label>
+      <label><input type="checkbox" value="Discipline"> Discipline</label>
+    </div>
+    <button class="btn-primary" id="btn-focus-next">NEXT</button>
+  </section>
+
+  <section class="screen" id="screen-situations">
+    <div class="top-bar">
+      <button class="back-btn" data-back>&larr; Back</button>
+      <div class="progress-dots">
+        <div class="dot active"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+    <h3>What situations matter most?</h3>
+    <div class="card checkbox-list" id="situations-list">
+      <label><input type="checkbox" value="Meeting strangers"> Meeting strangers</label>
+      <label><input type="checkbox" value="University/school"> University/school</label>
+      <label><input type="checkbox" value="Workplace"> Workplace</label>
+      <label><input type="checkbox" value="Presentations"> Presentations</label>
+      <label><input type="checkbox" value="Interviews"> Interviews</label>
+      <label><input type="checkbox" value="Public speaking"> Public speaking</label>
+      <label><input type="checkbox" value="Making friends"> Making friends</label>
+      <label><input type="checkbox" value="Leadership"> Leadership</label>
+      <label><input type="checkbox" value="Everyday life"> Everyday life</label>
+    </div>
+    <button class="btn-primary" id="btn-situations-next">NEXT</button>
+  </section>
+
+  <section class="screen" id="screen-sliders">
+    <div class="top-bar">
+      <button class="back-btn" data-back>&larr; Back</button>
+      <div class="progress-dots">
+        <div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot"></div>
+      </div>
+    </div>
+    <h3>What do you want to feel like?</h3>
+    <div class="card">
+      <div class="slider-row">
+        <div class="slider-labels"><span>CALM</span><span>ENERGETIC</span></div>
+        <input type="range" min="0" max="100" value="50" id="slider-energy">
+      </div>
+      <div class="slider-row">
+        <div class="slider-labels"><span>QUIET</span><span>EXPRESSIVE</span></div>
+        <input type="range" min="0" max="100" value="50" id="slider-expressive">
+      </div>
+      <div class="slider-row">
+        <div class="slider-labels"><span>CASUAL</span><span>FORMAL</span></div>
+        <input type="range" min="0" max="100" value="50" id="slider-formal">
+      </div>
+      <div class="slider-row">
+        <div class="slider-labels"><span>PRIVATE</span><span>SOCIAL</span></div>
+        <input type="range" min="0" max="100" value="50" id="slider-social">
+      </div>
+      <div class="slider-row">
+        <div class="slider-labels"><span>SOFT</span><span>ASSERTIVE</span></div>
+        <input type="range" min="0" max="100" value="50" id="slider-assertive">
+      </div>
+    </div>
+    <button class="btn-primary" id="btn-sliders-next">GENERATE MY MODE</button>
+  </section>
+
+  <section class="screen" id="screen-result">
+    <div class="top-bar">
+      <button class="back-btn" data-back>&larr; Back</button>
+      <div class="progress-dots">
+        <div class="dot active"></div><div class="dot active"></div><div class="dot active"></div><div class="dot active"></div>
+      </div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <p style="font-size:12px; color:var(--text-dim); letter-spacing:1px;">YOUR MODE</p>
+      <h1 id="result-name" style="font-size:28px; margin:10px 0;">CALM CONFIDENCE</h1>
+      <p id="result-desc" style="color:var(--text-dim); font-size:14px; line-height:1.6;"></p>
+    </div>
+    <button class="btn-primary" id="btn-start-training">START 7-DAY TRANSFORMATION</button>
+  </section>
+
+  <section class="screen" id="screen-dashboard">
+    <div class="top-bar">
+      <button class="back-btn" id="btn-clear-data">Clear Data</button>
+      <span id="dashboard-day" style="font-size:13px; color:var(--text-dim);">DAY 1 OF 7</span>
+    </div>
+    <div class="card" style="text-align:center;">
+      <p style="font-size:12px; color:var(--text-dim); letter-spacing:1px;">YOUR MODE</p>
+      <h2 id="dashboard-mode-name">CALM CONFIDENCE</h2>
+    </div>
+    <h3>Today's Training</h3>
+    <div id="training-cards"></div>
+  </section>
+
 </main>
 
+<script src="assets/exercises.js"></script>
 <script src="assets/app.js"></script>
 </body>
-  </html>
+</html>
